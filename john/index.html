@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>John's Page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio autoplay>
+        <source src="GodsPlan-Drake.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Welcome to John's Page! The images on this page bounce to the beat of "God's Plan" by Drake.</p>
+        </div>
+    </div>
+    
+    <header>
+        <h1 style="color: white;">Welcome to John's Personal Page</h1>
+    </header>
+    <section>
+        <h2>About Me</h2>
+        <p>Hi, I'm John! I'm 19 years old and a passionate student at Northwestern University. My academic journey is filled with curiosity and a drive to understand the world around me. Currently, I'm on a unique bay area immersion program, exploring the vibrant tech and startup ecosystem with a diverse cohort of 25 other students. This experience is not just about learning; it's about immersing myself in new cultures, ideas, and ways of thinking. When I'm not hitting the books, you can find me playing intramural sports, exploring local cafes, or volunteering at community events.</p>
+        <!-- Placeholder for a photo of yourself -->
+        <img src="busstop.JPG" alt="John" id="personalPhoto">
+    </section>
+    <section>
+        <h2>My Favorite Football Team</h2>
+        <p>As a die-hard football fan, my allegiance lies firmly with the Baltimore Ravens. Their dynamic play, team spirit, and resilience on the field are what draw me to them. From the legendary performances of players like Ray Lewis to the current roster's talent, the Ravens represent more than just a team; they symbolize a relentless pursuit of excellence. Watching their games is not just a pastime; it's an exhilarating experience that brings together fans from all walks of life.</p>
+        <!-- Placeholder for a photo of Baltimore Ravens -->
+        <img src="ravens.JPG" alt="Baltimore Ravens" id="footballTeamPhoto">
+    </section>
+    <section>
+        <h2>My Time in San Francisco</h2>
+        <p>San Francisco has been an incredible adventure. From the iconic Golden Gate Bridge to the historic streets of Chinatown, every moment here has been a discovery. One of my favorite experiences was jogging through the scenic trails of Golden Gate Park, where the city's natural beauty and bustling urban life merge. Sampling the diverse culinary delights, from authentic sourdough bread to the freshest seafood at Fisherman's Wharf, has been a journey for my taste buds. And let's not forget the tech tours - visiting the headquarters of world-leading tech companies was a surreal experience that has inspired my aspirations in the tech field.</p>
+        <!-- Placeholder for photos of your time in San Francisco -->
+        <div id="sfPhotos">
+            <!-- The images are the same, just ensure they have the same class -->
+            <img src="wendy.JPG" alt="San Francisco 1" class="slide">
+            <img src="running.JPG" alt="San Francisco 2" class="slide">
+            <img src="flowers.JPG" alt="San Francisco 3" class="slide">
+            <img src="cookies.JPG" alt="San Francisco 4" class="slide">
+            <!-- Add more as needed -->
+        </div>
+    </section>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user opens the page, open the modal 
+        window.onload = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>
